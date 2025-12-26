@@ -33,6 +33,7 @@ if(($c%%3)-eq 0){[Effects]::BitBlt($d,0,0,$w,$h,$d,0,0,0x00550009)}; ^
 [Effects]::DrawIcon($d,$p.X,$p.Y,$i); ^
 [Effects]::ReleaseDC([IntPtr]::Zero,$d); ^
 $c++; ^
-Start-Sleep -Milliseconds 20 ^
+Start-Sleep -Milliseconds 0 ^
 
 }"
+
